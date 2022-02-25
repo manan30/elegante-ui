@@ -1,4 +1,4 @@
 # Road Map
 
-- [ ] Setup Typescript
-- [ ] Setup Tailwind
+- [x] Setup Typescript
+- [x] Setup Tailwind
