@@ -4,7 +4,9 @@
   "description": "React component library built using Tailwind CSS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,7 @@
     "@storybook/addon-essentials": "6.4.19",
     "@storybook/addon-interactions": "6.4.19",
     "@storybook/addon-links": "6.4.19",
+    "@storybook/addon-postcss": "2.0.0",
     "@storybook/react": "6.4.19",
     "@storybook/testing-library": "0.0.9",
     "@types/react": "17.0.39",
