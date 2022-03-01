@@ -4,7 +4,8 @@
   "description": "React component library built using Tailwind CSS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npx only-allow pnpm",
+    "install:all": "pnpm recursive install",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -25,7 +26,8 @@
   },
   "homepage": "https://github.com/manan30/wave-ui#readme",
   "workspaces": [
-    "packages/**"
+    "packages/**",
+    "docs"
   ],
   "devDependencies": {
     "@babel/core": "7.17.5",
@@ -50,6 +52,7 @@
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-storybook": "0.5.7",
+    "parcel": "2.3.2",
     "postcss": "8.4.7",
     "prettier": "2.5.1",
     "react": "17.0.2",
