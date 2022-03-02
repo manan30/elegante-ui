@@ -25,10 +25,6 @@
     "url": "https://github.com/manan30/wave-ui/issues"
   },
   "homepage": "https://github.com/manan30/wave-ui#readme",
-  "workspaces": [
-    "packages/**",
-    "docs"
-  ],
   "devDependencies": {
     "@babel/core": "7.17.5",
     "@storybook/addon-actions": "6.4.19",
