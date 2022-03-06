@@ -6,4 +6,6 @@ export default {
   component: Dialog
 } as ComponentMeta<typeof Dialog>;
 
-export const Primary: ComponentStory<typeof Dialog> = () => <Dialog />;
+export const Primary: ComponentStory<typeof Dialog> = () => (
+  <Dialog show title='Abcd'></Dialog>
+);
