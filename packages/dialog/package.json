@@ -4,7 +4,7 @@
   "description": "Wave UI Dialog component",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "pnpm exec esbuild --bundle --format=esm --minify --outdir=dist --sourcemap --target=es2017 index.ts"
   },
   "keywords": [],
   "author": "Manan Joshi <mananjoshi1995@gmail.com>",

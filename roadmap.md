@@ -6,6 +6,7 @@
 - [x] Create first component
 - [ ] Setup build tooling
 - [ ] Publish
+- [ ] Add docs site
 
 ## Components
 
