@@ -1,20 +1,30 @@
 import React from 'react';
+import cn from 'clsx';
 
 type ButtonProps = {
   loading?: boolean;
   className?: string;
+  variant?: 'primary' | 'secondary' | 'link' | 'outline';
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: React.FC<ButtonProps> = ({
   type = 'button',
   loading,
+  disabled,
+  className: classes,
   children
 }) => {
+  const baseClasses =
+    'grid w-full px-4 py-2 transition-all rounded-md place-items-center bg-primary text-gray-50 hover:shadow-md focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-primary-dark focus:shadow-md';
+
+  const classNames = cn(
+    baseClasses,
+    disabled && 'opacity-50 cursor-default',
+    classes && classes
+  );
+
   return (
-    <button
-      className='grid w-full px-4 py-2 transition-all rounded-md place-items-center bg-primary text-gray-50 hover:shadow-md hover:bg-primary-dark'
-      type={type}
-    >
+    <button className={classNames} type={type}>
       <div className='flex items-center space-x-2'>
         {loading ? (
           <svg
