@@ -61,7 +61,7 @@ export const Button: React.FC<ButtonProps> = ({
   );
 
   return (
-    <button className={classNames} type={type}>
+    <button className={classNames} type={type} disabled={disabled}>
       <div className='flex items-center space-x-2'>
         {loading ? (
           <svg

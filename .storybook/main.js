@@ -1,14 +1,10 @@
 module.exports = {
-  stories: [
-    // '../packages/**/*.stories.mdx',
-    '../packages/**/stories/*.stories.@(js|jsx|ts|tsx)'
-  ],
+  stories: ['../packages/**/stories/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
-    '@storybook/addon-links',
     '@storybook/addon-essentials',
+    '@storybook/addon-links',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
-    '@storybook/addon-docs',
     {
       name: '@storybook/addon-postcss',
       options: {
@@ -21,7 +17,4 @@ module.exports = {
   typescript: {
     reactDocgen: false
   }
-  // core: {
-  //   builder: 'storybook-builder-vite'
-  // }
 };
