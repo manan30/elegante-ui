@@ -7,6 +7,7 @@ importers:
       '@babel/core': 7.17.5
       '@storybook/addon-a11y': 6.4.19
       '@storybook/addon-actions': 6.4.19
+      '@storybook/addon-docs': 6.4.19
       '@storybook/addon-essentials': 6.4.19
       '@storybook/addon-interactions': 6.4.19
       '@storybook/addon-links': 6.4.19
@@ -41,6 +42,7 @@ importers:
       '@babel/core': 7.17.5
       '@storybook/addon-a11y': 6.4.19_b8fdba992ce7d797017dc07106486496
       '@storybook/addon-actions': 6.4.19_b8fdba992ce7d797017dc07106486496
+      '@storybook/addon-docs': 6.4.19_3d7e7fdc6db849572394d4d63cfec864
       '@storybook/addon-essentials': 6.4.19_6e4efcba34853d281ccac2da3624a23c
       '@storybook/addon-interactions': 6.4.19_a091783e0d0659eb6408e4b7edfe755f
       '@storybook/addon-links': 6.4.19_react-dom@17.0.2+react@17.0.2
@@ -595,7 +597,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.16.7
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.12.9
       '@babel/plugin-transform-parameters': 7.16.7_@babel+core@7.12.9
     dev: true
@@ -4116,7 +4118,7 @@ packages:
   /@types/node-fetch/2.6.1:
     resolution: {integrity: sha512-oMqjURCaxoSIsHSr1E47QHzbmzNR5rK8McHuNb11BOM9cHcIK3Avy0s/b2JlXHoQGTYS3NsvWzV1M0iK7l0wbA==}
     dependencies:
-      '@types/node': 14.18.12
+      '@types/node': 17.0.21
       form-data: 3.0.1
     dev: true
 
@@ -4209,7 +4211,7 @@ packages:
   /@types/webpack-sources/3.2.0:
     resolution: {integrity: sha512-Ft7YH3lEVRQ6ls8k4Ff1oB4jN6oy/XmU6tQISKdhfh+1mR+viZFphS6WL0IrtDOzvefmJg5a0s7ZQoRXwqTEFg==}
     dependencies:
-      '@types/node': 14.18.12
+      '@types/node': 17.0.21
       '@types/source-list-map': 0.1.2
       source-map: 0.7.3
     dev: true
@@ -4217,7 +4219,7 @@ packages:
   /@types/webpack/4.41.32:
     resolution: {integrity: sha512-cb+0ioil/7oz5//7tZUSwbrSAN/NWHrQylz5cW8G0dWTcF/g+/dSdMlKVZspBYuMAN1+WnwHrkxiRrLcwd0Heg==}
     dependencies:
-      '@types/node': 14.18.12
+      '@types/node': 17.0.21
       '@types/tapable': 1.0.8
       '@types/uglify-js': 3.13.1
       '@types/webpack-sources': 3.2.0
