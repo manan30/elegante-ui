@@ -4,21 +4,58 @@ import cn from 'clsx';
 type ButtonProps = {
   loading?: boolean;
   className?: string;
-  variant?: 'primary' | 'secondary' | 'link' | 'outline';
+  variant?: 'solid' | 'link' | 'outline';
+  appearance?: 'primary' | 'secondary';
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: React.FC<ButtonProps> = ({
   type = 'button',
   loading,
   disabled,
+  variant = 'solid',
+  appearance = 'primary',
   className: classes,
   children
 }) => {
   const baseClasses =
-    'grid w-full px-4 py-2 transition-all rounded-md place-items-center bg-primary text-gray-50 hover:shadow-md focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-primary-dark focus:shadow-md';
+    'grid w-full px-4 py-2 transition-all rounded-md place-items-center';
+
+  const variantClasses = (() => {
+    const baseSolidVariantClasses =
+      'text-gray-50 hover:shadow-md focus:outline-none focus:ring-1 focus:ring-offset-1 focus:shadow-md';
+
+    const baseLinkVariantClasses =
+      'hover:underline focus:outline-none focus:underline bg-white';
+
+    const baseOutlineVariantClasses =
+      'hover:shadow-md focus:outline-none focus:shadow-md border border-solid';
+
+    switch (variant) {
+      case 'solid':
+        return (
+          `${baseSolidVariantClasses} ` +
+          (appearance === 'primary'
+            ? 'bg-primary focus:ring-primary-dark hover:bg-primary-dark focus:bg-primary-dark'
+            : 'bg-secondary focus:ring-secondary-dark hover:bg-secondary-dark focus:bg-secondary-dark')
+        );
+      case 'link':
+        return (
+          `${baseLinkVariantClasses} ` +
+          (appearance === 'primary' ? 'text-primary' : 'text-secondary')
+        );
+      case 'outline':
+        return (
+          `${baseOutlineVariantClasses} ` +
+          (appearance === 'primary'
+            ? 'text-primary border-primary'
+            : 'text-secondary border-secondary')
+        );
+    }
+  })();
 
   const classNames = cn(
     baseClasses,
+    variantClasses,
     disabled && 'opacity-50 cursor-default',
     classes && classes
   );
