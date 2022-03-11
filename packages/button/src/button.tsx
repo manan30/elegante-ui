@@ -1,14 +1,23 @@
 import { ButtonHTMLAttributes, FC } from 'react';
 import cn from 'clsx';
 
-type Variant = 'solid' | 'link' | 'outline';
-type Appearance = 'primary' | 'secondary';
-
 type ButtonProps = {
+  /**
+   * Shows loading spinner when true
+   */
   loading?: boolean;
+  /**
+   * Tailwind CSS classes
+   */
   className?: string;
-  variant?: Variant;
-  appearance?: Appearance;
+  /**
+   * Supported button variants
+   */
+  variant?: 'solid' | 'link' | 'outline';
+  /**
+   * Supported button appearance
+   */
+  appearance?: 'primary' | 'secondary';
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: FC<ButtonProps> = ({
@@ -18,7 +27,8 @@ export const Button: FC<ButtonProps> = ({
   variant = 'solid',
   appearance = 'primary',
   className: classes,
-  children
+  children,
+  ...rest
 }) => {
   const baseClasses =
     'grid w-full px-4 py-2 transition-all rounded-md place-items-center';
@@ -64,7 +74,7 @@ export const Button: FC<ButtonProps> = ({
   );
 
   return (
-    <button className={classNames} type={type} disabled={disabled}>
+    <button className={classNames} type={type} disabled={disabled} {...rest}>
       <div className='flex items-center space-x-2'>
         {loading ? (
           <svg

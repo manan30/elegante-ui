@@ -13,7 +13,15 @@ export default {
         <Story />
       </div>
     )
-  ]
+  ],
+  argTypes: {
+    disabled: {
+      defaultValue: false,
+      description: 'Controls disabled state',
+      name: 'Disabled',
+      type: 'boolean'
+    }
+  }
 } as ComponentMeta<typeof Button>;
 
 export const Solid: ComponentStory<typeof Button> = () => (
