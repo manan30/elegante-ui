@@ -1,14 +1,17 @@
-import React from 'react';
+import { ButtonHTMLAttributes, FC } from 'react';
 import cn from 'clsx';
+
+type Variant = 'solid' | 'link' | 'outline';
+type Appearance = 'primary' | 'secondary';
 
 type ButtonProps = {
   loading?: boolean;
   className?: string;
-  variant?: 'solid' | 'link' | 'outline';
-  appearance?: 'primary' | 'secondary';
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+  variant?: Variant;
+  appearance?: Appearance;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button: React.FC<ButtonProps> = ({
+export const Button: FC<ButtonProps> = ({
   type = 'button',
   loading,
   disabled,
