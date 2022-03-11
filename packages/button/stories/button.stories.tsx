@@ -7,20 +7,6 @@ export default {
   parameters: {
     controls: { hideNoControlsWarning: true }
   },
-  argTypes: {
-    appearance: {
-      control: {
-        type: 'select'
-      },
-      options: ['primary', 'secondary']
-    },
-    variant: {
-      control: {
-        type: 'select'
-      },
-      options: ['solid', 'link', 'outline']
-    }
-  },
   decorators: [
     (Story) => (
       <div className='w-24'>
