@@ -18,6 +18,10 @@ type ButtonProps = {
    * Supported button appearance
    */
   appearance?: 'primary' | 'secondary';
+  /**
+   * Controls button disabled state
+   */
+  disabled?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: FC<ButtonProps> = ({

@@ -13,22 +13,15 @@ export default {
         <Story />
       </div>
     )
-  ],
-  argTypes: {
-    disabled: {
-      defaultValue: false,
-      description: 'Controls disabled state',
-      name: 'Disabled',
-      type: 'boolean'
-    }
-  }
+  ]
 } as ComponentMeta<typeof Button>;
 
-export const Solid: ComponentStory<typeof Button> = () => (
-  <Button appearance='primary' variant='solid'>
-    Button
-  </Button>
-);
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+
+export const Solid = Template.bind({});
+Solid.args = {
+  appearance: 'primary'
+};
 
 export const Outline: ComponentStory<typeof Button> = () => (
   <Button appearance='primary' variant='outline'>
