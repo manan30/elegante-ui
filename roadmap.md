@@ -4,12 +4,14 @@
 - [x] Setup Tailwind
 - [x] Setup pnpm workspace
 - [x] Create first component
-- [ ] Setup build tooling
+- [x] Setup build tooling
+- [x] Setup lint, format, etc scripts
 - [ ] Publish
+- [ ] Add docs site
 
 ## Components
 
-- Button
+- [ ] Button
 - Dialog
 - Badge
 - Form

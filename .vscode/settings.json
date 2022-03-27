@@ -1,3 +1,13 @@
 {
-  "cSpell.words": ["clsx", "headlessui", "pnpm", "preinstall", "tailwindcss"]
+  "cSpell.words": [
+    "clsx",
+    "docgen",
+    "esbuild",
+    "headlessui",
+    "outdir",
+    "pnpm",
+    "prebuild",
+    "preinstall",
+    "tailwindcss"
+  ]
 }

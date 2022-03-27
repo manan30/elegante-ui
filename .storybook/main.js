@@ -1,13 +1,9 @@
 module.exports = {
-  stories: [
-    // '../packages/**/*.stories.mdx',
-    '../packages/**/stories/*.stories.@(js|jsx|ts|tsx)'
-  ],
+  stories: ['../packages/**/stories/*.stories.tsx'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    "@storybook/addon-a11y"
     {
       name: '@storybook/addon-postcss',
       options: {
@@ -18,9 +14,23 @@ module.exports = {
     }
   ],
   typescript: {
-    reactDocgen: false
+    check: false,
+    checkOptions: {},
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      shouldExtractValuesFromUnion: true,
+      skipChildrenPropWithoutDoc: false,
+      shouldRemoveUndefinedFromOptional: true,
+      propFilter: (prop) =>
+        prop.parent ? !/node_modules/.test(prop.parent.fileName) : true
+    }
+  },
+  framework: '@storybook/react',
+  core: {
+    builder: 'webpack4'
+  },
+  features: {
+    postcss: false
   }
-  // core: {
-  //   builder: 'storybook-builder-vite'
-  // }
 };
