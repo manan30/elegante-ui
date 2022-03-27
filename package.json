@@ -6,8 +6,8 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "install:all": "pnpm --recursive install",
-    "build:all": "pnpm --filter '@wave-ui/*' build",
-    "publish:all": "pnpm --filter '@wave-ui/*' publish",
+    "build:all": "pnpm --filter '@waveui/*' build",
+    "publish:all": "pnpm --filter '@waveui/*' publish",
     "lint:all": "pnpm exec eslint 'packages/**/*.{ts,tsx}' --max-warnings 0",
     "link-fix:all": "pnpm exec eslint --fix 'packages/**/*.{ts,tsx}'",
     "format:all": "pnpm exec prettier --write 'packages/**/*.{ts,tsx,css}'",
