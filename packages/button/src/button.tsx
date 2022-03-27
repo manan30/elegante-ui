@@ -1,7 +1,7 @@
-import { ButtonHTMLAttributes, FC } from 'react';
+import type { ButtonHTMLAttributes, FC } from 'react';
 import cn from 'clsx';
 
-type ButtonProps = {
+export type ButtonProps = {
   /**
    * Shows loading spinner when true
    */
@@ -20,7 +20,7 @@ type ButtonProps = {
   disabled?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button: FC<ButtonProps> = ({
+const Button: FC<ButtonProps> = ({
   type = 'button',
   loading,
   disabled,
@@ -101,3 +101,5 @@ export const Button: FC<ButtonProps> = ({
     </button>
   );
 };
+
+export default Button;

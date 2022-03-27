@@ -5,7 +5,7 @@
 - [x] Setup pnpm workspace
 - [x] Create first component
 - [x] Setup build tooling
-- [ ] Setup lint, format, etc scripts
+- [x] Setup lint, format, etc scripts
 - [ ] Publish
 - [ ] Add docs site
 

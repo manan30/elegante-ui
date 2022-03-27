@@ -6,6 +6,7 @@
     "headlessui",
     "outdir",
     "pnpm",
+    "prebuild",
     "preinstall",
     "tailwindcss"
   ]
