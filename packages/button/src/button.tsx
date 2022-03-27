@@ -1,12 +1,7 @@
 import { ButtonHTMLAttributes, FC } from 'react';
 import cn from 'clsx';
 
-type ExcludeComponentPropsFromReactProps<HTMLElement, ComponentProps> = Exclude<
-  HTMLElement,
-  keyof ComponentProps
->;
-
-type ComponentProps = {
+type ButtonProps = {
   /**
    * Shows loading spinner when true
    */
@@ -31,36 +26,7 @@ type ComponentProps = {
    * Button click handler
    */
   onClick?: () => void;
-};
-
-type ButtonProps = ComponentProps &
-  ExcludeComponentPropsFromReactProps<
-    ButtonHTMLAttributes<HTMLButtonElement>,
-    ComponentProps
-  >;
-
-// type ButtonProps = {
-//   /**
-//    * Shows loading spinner when true
-//    */
-//   loading?: boolean;
-//   /**
-//    * Tailwind CSS classes
-//    */
-//   className?: string;
-//   /**
-//    * Supported button variants
-//    */
-//   variant?: 'solid' | 'link' | 'outline';
-//   /**
-//    * Supported button appearance
-//    */
-//   appearance?: 'primary' | 'secondary';
-//   /**
-//    * Controls button disabled state
-//    */
-//   disabled?: boolean;
-// } & ButtonHTMLAttributes<HTMLButtonElement>;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: FC<ButtonProps> = ({
   type = 'button',
