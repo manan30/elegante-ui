@@ -7,10 +7,6 @@ type ButtonProps = {
    */
   loading?: boolean;
   /**
-   * Tailwind CSS classes
-   */
-  className?: string;
-  /**
    * Supported button variants
    */
   variant?: 'solid' | 'link' | 'outline';
@@ -22,10 +18,6 @@ type ButtonProps = {
    * Controls button disabled state
    */
   disabled?: boolean;
-  /**
-   * Button click handler
-   */
-  onClick?: () => void;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: FC<ButtonProps> = ({
@@ -34,7 +26,6 @@ export const Button: FC<ButtonProps> = ({
   disabled,
   variant = 'solid',
   appearance = 'primary',
-  className: classes,
   children,
   ...rest
 }) => {
@@ -77,8 +68,7 @@ export const Button: FC<ButtonProps> = ({
   const classNames = cn(
     baseClasses,
     variantClasses,
-    disabled && 'opacity-50 cursor-default',
-    classes && classes
+    disabled && 'opacity-50 cursor-default'
   );
 
   return (
