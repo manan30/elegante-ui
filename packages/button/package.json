@@ -7,7 +7,8 @@
     "prebuild": "pnpm clean",
     "build": "pnpm exec concurrently pnpm:build:*",
     "build:component": "pnpm exec esbuild --bundle --format=esm --minify --outdir=dist --sourcemap --target=es2017 index.ts",
-    "build:types": "pnpm exec tsc --emitDeclarationOnly --declarationDir dist/types"
+    "build:types": "pnpm exec tsc --emitDeclarationOnly --declarationDir dist/types",
+    "publish": "pnpm publish"
   },
   "keywords": [],
   "author": "Manan Joshi <mananjoshi1995@gmail.com>",
