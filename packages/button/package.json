@@ -3,10 +3,10 @@
   "version": "0.0.2",
   "description": "Wave UI Button component",
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo",
     "prebuild": "pnpm clean",
     "build": "pnpm exec concurrently pnpm:build:*",
-    "build:component": "pnpm exec esbuild --bundle --format=esm --minify --outdir=dist --sourcemap --target=es2017 index.ts",
+    "build:component": "pnpm exec esbuild --bundle --format=esm --minify --outdir=dist --sourcemap --target=es2016 index.ts",
     "build:types": "pnpm exec tsc --emitDeclarationOnly --declarationDir dist/types",
     "publish": "pnpm publish --access public"
   },
