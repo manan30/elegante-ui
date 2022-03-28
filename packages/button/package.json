@@ -1,6 +1,6 @@
 {
   "name": "@waveui/button",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Wave UI Button component",
   "scripts": {
     "clean": "rm -rf dist tsconfig.tsbuildinfo",

@@ -1,6 +1,6 @@
 {
   "name": "waveui",
-  "version": "0.0.2",
+  "version": "0.0.0",
   "description": "React component library built using Tailwind CSS",
   "main": "index.js",
   "scripts": {
