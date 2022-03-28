@@ -7,6 +7,9 @@
 - [x] Setup build tooling
 - [x] Setup lint, format, etc scripts
 - [ ] Publish
+- [ ] Release notes
+- [ ] changesets
+- [ ] github actions
 - [ ] Add docs site
 
 ## Components

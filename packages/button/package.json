@@ -14,6 +14,7 @@
   "author": "Manan Joshi <mananjoshi1995@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@waveui/styles": "workspace:0.0.1",
     "react": "17.0.2"
   },
   "peerDependencies": {

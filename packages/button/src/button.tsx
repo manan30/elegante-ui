@@ -1,5 +1,6 @@
 import * as React from 'react';
 import cn from 'clsx';
+import '@waveui/styles/dist/tailwind.css';
 
 export type ButtonProps = {
   /**

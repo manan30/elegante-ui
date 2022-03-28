@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf dist tsconfig.tsbuildinfo",
     "prebuild": "pnpm clean",
-    "build": "pnpm exec tailwindcss -i ./src/index.css -o dist/tailwind.css --minify",
+    "build": "pnpm exec tailwind -i ./src/index.css -o dist/tailwind.css --minify -c ./src/tailwind.config.js",
     "publish": "pnpm publish --access public"
   },
   "files": [
