@@ -9,7 +9,7 @@
     "build:all": "pnpm --filter '@waveui/*' build",
     "publish:all": "pnpm --filter '@waveui/*' publish",
     "lint:all": "pnpm exec eslint 'packages/**/*.{ts,tsx}' --max-warnings 0",
-    "link-fix:all": "pnpm exec eslint --fix 'packages/**/*.{ts,tsx}'",
+    "lint-fix:all": "pnpm exec eslint --fix 'packages/**/*.{ts,tsx}'",
     "format:all": "pnpm exec prettier --write 'packages/**/*.{ts,tsx,css}'",
     "format-check:all": "pnpm exec prettier --check 'packages/**/*.{ts,tsx,css}'",
     "storybook": "start-storybook -p 6006",

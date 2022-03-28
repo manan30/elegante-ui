@@ -8,7 +8,8 @@
     "build": "pnpm exec concurrently pnpm:build:*",
     "build:component": "pnpm exec esbuild --bundle --format=esm --minify --outdir=dist --sourcemap --target=es2016 index.ts",
     "build:types": "pnpm exec tsc --emitDeclarationOnly --declarationDir dist/types",
-    "publish": "pnpm publish --access public"
+    "publish": "pnpm publish --access public",
+    "test:link": "pnpm build && pnpm link --global"
   },
   "keywords": [],
   "author": "Manan Joshi <mananjoshi1995@gmail.com>",
