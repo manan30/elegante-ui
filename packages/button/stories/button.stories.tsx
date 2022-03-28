@@ -21,7 +21,6 @@ export default {
       defaultValue: false,
       type: 'boolean'
     },
-
     onClick: { action: 'Clicked', table: { disable: true } }
   },
   decorators: [
