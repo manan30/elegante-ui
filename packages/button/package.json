@@ -1,19 +1,21 @@
 {
-  "name": "@wave-ui/button",
+  "name": "@waveui/button",
   "version": "0.0.1",
   "description": "Wave UI Button component",
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo",
     "prebuild": "pnpm clean",
     "build": "pnpm exec concurrently pnpm:build:*",
-    "build:component": "pnpm exec esbuild --bundle --format=esm --minify --outdir=dist --sourcemap --target=es2017 index.ts",
+    "build:component": "pnpm exec esbuild --bundle --format=esm --minify --outdir=dist --sourcemap --target=es2016 index.ts",
     "build:types": "pnpm exec tsc --emitDeclarationOnly --declarationDir dist/types",
-    "publish": "pnpm publish"
+    "publish": "pnpm publish --access public",
+    "test:link": "pnpm build && pnpm link --global"
   },
   "keywords": [],
   "author": "Manan Joshi <mananjoshi1995@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@waveui/styles": "workspace:0.0.1",
     "react": "17.0.2"
   },
   "peerDependencies": {
