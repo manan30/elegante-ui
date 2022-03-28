@@ -10,13 +10,13 @@ importers:
       '@storybook/addon-interactions': ^6.4.19
       '@storybook/addon-links': ^6.4.19
       '@storybook/addon-postcss': 2.0.0
+      '@storybook/builder-webpack4': 6.4.19
       '@storybook/react': ^6.4.19
       '@storybook/testing-library': ^0.0.9
       '@types/react': 17.0.39
       '@types/react-dom': 17.0.11
       '@typescript-eslint/eslint-plugin': 5.12.0
       '@typescript-eslint/parser': 5.12.0
-      '@waveui/button': ^0.0.2
       autoprefixer: 10.4.2
       babel-loader: ^8.2.3
       clsx: 1.1.1
@@ -36,8 +36,6 @@ importers:
       react-dom: 17.0.2
       tailwindcss: 3.0.23
       typescript: 4.2.2
-    dependencies:
-      '@waveui/button': link:packages/button
     devDependencies:
       '@babel/core': 7.17.5
       '@storybook/addon-actions': 6.4.19_b8fdba992ce7d797017dc07106486496
@@ -45,6 +43,7 @@ importers:
       '@storybook/addon-interactions': 6.4.19_7d9d2a3fb2e7673a96132996dcddd076
       '@storybook/addon-links': 6.4.19_react-dom@17.0.2+react@17.0.2
       '@storybook/addon-postcss': 2.0.0
+      '@storybook/builder-webpack4': 6.4.19_7d9d2a3fb2e7673a96132996dcddd076
       '@storybook/react': 6.4.19_2bf01d77b6ccb91a3db390b43aa76132
       '@storybook/testing-library': 0.0.9_react-dom@17.0.2+react@17.0.2
       '@types/react': 17.0.39
@@ -78,6 +77,9 @@ importers:
     devDependencies:
       '@waveui/styles': link:../styles
       react: 17.0.2
+
+  packages/styles:
+    specifiers: {}
 
 packages:
 
