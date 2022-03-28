@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, FC } from 'react';
+import * as React from 'react';
 import cn from 'clsx';
 
 export type ButtonProps = {
@@ -18,9 +18,9 @@ export type ButtonProps = {
    * Controls button disabled state
    */
   disabled?: boolean;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button: FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   type = 'button',
   loading,
   disabled,
@@ -101,5 +101,3 @@ const Button: FC<ButtonProps> = ({
     </button>
   );
 };
-
-export default Button;
