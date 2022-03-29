@@ -1,7 +1,7 @@
 {
-  "name": "@waveui/button",
+  "name": "@waveui/card",
   "version": "0.0.1",
-  "description": "Wave UI Button component",
+  "description": "Wave UI Card component",
   "scripts": {
     "clean": "rm -rf dist tsconfig.tsbuildinfo",
     "prebuild": "pnpm clean",
@@ -15,7 +15,6 @@
   "author": "Manan Joshi <mananjoshi1995@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@waveui/styles": "workspace:0.0.1",
     "react": "17.0.2"
   },
   "peerDependencies": {
