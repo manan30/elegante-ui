@@ -1,25 +1,27 @@
 import * as React from 'react';
 import cn from 'clsx';
 
-export type CardProps = {
+type CardProps = {
   /**
-   * Shows loading spinner when true
+   * CSS classes, eg. tailwind
    */
-  loading?: boolean;
+  className?: string;
   /**
-   * Supported button variants
+   * React CSS style object
    */
-  variant?: 'solid' | 'link' | 'outline';
-  /**
-   * Supported button appearance
-   */
-  appearance?: 'primary' | 'secondary';
-  /**
-   * Controls button disabled state
-   */
-  disabled?: boolean;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+  style?: React.CSSProperties;
+};
 
-export const Card: React.FC<CardProps> = () => {
-  return <div></div>;
+export const Card: React.FC<CardProps> = ({ className, style, children }) => {
+  return (
+    <div
+      className={cn(
+        'w-full h-auto p-4 shadow-sm rounded-md bg-slate-50',
+        className && className
+      )}
+      style={style}
+    >
+      {children}
+    </div>
+  );
 };
