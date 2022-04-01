@@ -3,15 +3,45 @@ import cn from 'clsx';
 import type { InputType } from './types';
 
 export type InputProps = {
+  /**
+   * name to be assigned to the input
+   */
   name: string;
+  /**
+   * label for the input
+   */
   label: string;
+  /**
+   * value to be assigned to the input
+   */
   value: string;
+  /**
+   * type of input
+   */
   type?: InputType;
+  /**
+   * placeholder for the input
+   */
   placeholder?: string;
+  /**
+   * controls disabled state for input
+   */
   disabled?: boolean;
+  /**
+   * show input error
+   */
   error?: boolean;
+  /**
+   * error text to be shown
+   */
   errorText?: string;
+  /**
+   * hide the label
+   */
   hideLabel?: boolean;
+  /**
+   * input change handler
+   */
   onChange: (name: string, value: string) => void;
 } & React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,

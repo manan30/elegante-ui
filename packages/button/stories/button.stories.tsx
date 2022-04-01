@@ -23,13 +23,7 @@ export default {
     },
     onClick: { action: 'Clicked', table: { disable: true } }
   },
-  decorators: [
-    (Story) => (
-      <div className='w-24'>
-        <Story />
-      </div>
-    )
-  ]
+  decorators: [(Story) => <div className='w-24'>{Story()}</div>]
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => (
