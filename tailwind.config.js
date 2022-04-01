@@ -20,8 +20,11 @@ module.exports = {
         warning: { DEFAULT: '#e0c245', light: '#fbefd1', dark: '#c2a427' },
         success: { DEFAULT: '#4bd15e', light: '#d8f5d6', dark: '#2db340' },
         danger: { DEFAULT: '#e14755', light: '#ffd3d2', dark: '#c32937' }
+      },
+      fontSize: {
+        xxs: '0.65rem'
       }
     }
   },
-  plugins: []
+  plugins: [require('@tailwindcss/forms')]
 };

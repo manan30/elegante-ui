@@ -1,7 +1,7 @@
 {
-  "name": "@waveui/button",
+  "name": "@waveui/input",
   "version": "0.0.1",
-  "description": "Wave UI Button component",
+  "description": "Wave UI Input component",
   "scripts": {
     "clean": "rm -rf dist tsconfig.tsbuildinfo",
     "prebuild": "pnpm clean",
