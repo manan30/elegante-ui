@@ -9,7 +9,7 @@ export default {
   },
   decorators: [
     (Story) => (
-      <div className='w-24'>
+      <div className='w-48'>
         <Story />
       </div>
     )
@@ -21,3 +21,4 @@ const Template: ComponentStory<typeof InputComponent> = (args) => (
 );
 
 export const Input = Template.bind({});
+Input.args = { label: 'Input' };
