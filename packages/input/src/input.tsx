@@ -28,7 +28,8 @@ export const Input: React.FC<InputProps> = ({
   error = false,
   errorText,
   hideLabel,
-  onChange
+  onChange,
+  ...rest
 }) => {
   return (
     <label htmlFor={name} className='flex flex-col w-full space-y-2'>
@@ -56,6 +57,7 @@ export const Input: React.FC<InputProps> = ({
           error && 'border-danger focus:border-danger focus:ring-danger',
           disabled && 'opacity-50'
         )}
+        {...rest}
       />
       {error ? (
         <span className='font-semibold tracking-wide text-danger-dark text-xxs sm:text-xs'>
