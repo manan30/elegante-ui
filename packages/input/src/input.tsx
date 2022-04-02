@@ -66,7 +66,7 @@ export const Input: React.FC<InputProps> = ({
       <span
         className={cn(
           'text-xs font-semibold tracking-wide text-primary sm:text-sm',
-          hideLabel && 'hidden'
+          hideLabel && 'sr-only'
         )}
       >
         {label}

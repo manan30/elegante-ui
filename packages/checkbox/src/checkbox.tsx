@@ -11,7 +11,7 @@ export type CheckboxProps = {
   onChange?: (name: string, checked: boolean) => void;
 };
 
-export const Checkbox: React.FC<CheckboxProps> = ({
+export const Checkbox: React.VFC<CheckboxProps> = ({
   name,
   checked,
   disabled,

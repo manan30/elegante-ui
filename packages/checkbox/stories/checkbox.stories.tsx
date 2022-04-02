@@ -7,7 +7,18 @@ export default {
   parameters: {
     controls: { hideNoControlsWarning: true }
   },
-  argTypes: {}
+  argTypes: {
+    name: { defaultValue: 'checkbox' },
+    checkboxText: {
+      defaultValue: 'This is a checkbox',
+      control: { type: 'text' }
+    },
+    checked: { control: { type: null } },
+    disabled: { control: { type: 'boolean' }, defaultValue: false },
+    error: { control: { type: 'boolean' }, defaultValue: false },
+    errorText: { defaultValue: 'Required', control: { type: 'text' } },
+    onChange: { control: { type: null } }
+  }
 } as ComponentMeta<typeof CheckboxComponent>;
 
 const Template: ComponentStory<typeof CheckboxComponent> = (args) => (
@@ -15,4 +26,3 @@ const Template: ComponentStory<typeof CheckboxComponent> = (args) => (
 );
 
 export const Checkbox = Template.bind({});
-Checkbox.args = { checkboxText: 'Email me the updates' };
