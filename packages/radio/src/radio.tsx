@@ -33,7 +33,7 @@ export const Radio: React.VFC<RadioProps> = ({
             onChange?.(name, e.currentTarget.checked);
           }}
           className={cn(
-            'rounded border-secondary-light text-primary focus:shadow-sm focus:border-primary-light focus:ring-1 focus:ring-offset-1 focus:ring-primary focus:ring-opacity-50 transition-all hover:shadow-sm',
+            'rounded-full border-secondary-light text-primary focus:shadow-sm focus:border-primary-light focus:ring-1 focus:ring-offset-1 focus:ring-primary focus:ring-opacity-50 transition-all hover:shadow-sm',
             error && 'text-danger focus:border-danger-light focus:ring-danger',
             disabled && 'opacity-50'
           )}
