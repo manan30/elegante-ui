@@ -7,8 +7,7 @@ export default {
   parameters: {
     controls: { hideNoControlsWarning: true }
   },
-  argTypes: {},
-  decorators: [(Story) => <div className='w-48'>{Story()}</div>]
+  argTypes: {}
 } as ComponentMeta<typeof CheckboxComponent>;
 
 const Template: ComponentStory<typeof CheckboxComponent> = (args) => (
@@ -16,3 +15,4 @@ const Template: ComponentStory<typeof CheckboxComponent> = (args) => (
 );
 
 export const Checkbox = Template.bind({});
+Checkbox.args = { checkboxText: 'Email me the updates' };

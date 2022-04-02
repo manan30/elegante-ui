@@ -80,7 +80,7 @@ export const Input: React.FC<InputProps> = ({
         disabled={disabled}
         placeholder={placeholder}
         onChange={(e) => {
-          onChange(name, e.target.value);
+          onChange(name, e.currentTarget.value);
         }}
         className={cn(
           'w-full text-xs sm:text-sm text-secondary border border-secondary-light rounded-md focus:shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow hover:shadow-sm block',
