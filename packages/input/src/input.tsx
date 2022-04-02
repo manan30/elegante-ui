@@ -66,7 +66,7 @@ export const Input: React.FC<InputProps> = ({
       <span
         className={cn(
           'text-xs font-semibold tracking-wide text-primary sm:text-sm',
-          hideLabel && 'hidden'
+          hideLabel && 'sr-only'
         )}
       >
         {label}
@@ -80,10 +80,10 @@ export const Input: React.FC<InputProps> = ({
         disabled={disabled}
         placeholder={placeholder}
         onChange={(e) => {
-          onChange(name, e.target.value);
+          onChange(name, e.currentTarget.value);
         }}
         className={cn(
-          'w-full text-xs sm:text-sm text-secondary border border-secondary-light rounded-md shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow hover:shadow-sm',
+          'w-full text-xs sm:text-sm text-secondary border border-secondary-light rounded-md focus:shadow-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow hover:shadow-sm block',
           error && 'border-danger focus:border-danger focus:ring-danger',
           disabled && 'opacity-50'
         )}

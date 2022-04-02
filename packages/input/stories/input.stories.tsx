@@ -9,7 +9,7 @@ export default {
   },
   argTypes: {
     type: { table: { disable: true } },
-    value: { table: { disable: true } },
+    value: { control: { type: null } },
     placeholder: { defaultValue: 'Input', control: { type: 'text' } },
     disabled: {
       defaultValue: false,
@@ -24,7 +24,7 @@ export default {
       defaultValue: false,
       type: 'boolean'
     },
-    onChange: { table: { disable: true } }
+    onChange: { control: { type: null } }
   },
   decorators: [(Story) => <div className='w-48'>{Story()}</div>]
 } as ComponentMeta<typeof InputComponent>;
