@@ -53,3 +53,5 @@ export const Radio: React.VFC<RadioProps> = ({
     </div>
   );
 };
+
+Radio.type;

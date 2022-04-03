@@ -1,9 +1,9 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Radio as RadioComponent } from '../src';
+import { Radio, RadioGroup as RadioGroupComponent } from '../src';
 
 export default {
-  title: 'Radio',
-  component: RadioComponent,
+  title: 'RadioGroup',
+  component: RadioGroupComponent,
   parameters: {
     controls: { hideNoControlsWarning: true }
   },
@@ -20,13 +20,10 @@ export default {
     onChange: { control: { type: null } },
     value: { control: { type: 'text' } }
   }
-} as ComponentMeta<typeof RadioComponent>;
+} as ComponentMeta<typeof RadioGroupComponent>;
 
-const Template: ComponentStory<typeof RadioComponent> = (args) => (
-  <RadioComponent {...args} />
+const Template: ComponentStory<typeof RadioGroupComponent> = (args) => (
+  <RadioGroupComponent {...args}></RadioGroupComponent>
 );
 
-export const Radio = Template.bind({});
-Radio.args = {
-  value: 'Radio'
-};
+export const RadioGroup = Template.bind({});
