@@ -26,3 +26,6 @@ const Template: ComponentStory<typeof RadioComponent> = (args) => (
 );
 
 export const Radio = Template.bind({});
+Radio.args = {
+  value: 'Radio'
+};

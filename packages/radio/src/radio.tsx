@@ -3,16 +3,18 @@ import cn from 'clsx';
 
 export type RadioProps = {
   name: string;
-  selected: boolean;
+  value: string | number;
+  selected?: boolean;
   disabled?: boolean;
   error?: boolean;
   errorText?: string;
   radioText?: string;
-  onChange?: (name: string, checked: boolean) => void;
+  onChange?: (name: string, value: string | number, checked: boolean) => void;
 };
 
 export const Radio: React.VFC<RadioProps> = ({
   name,
+  value,
   selected,
   disabled,
   error,
@@ -26,11 +28,12 @@ export const Radio: React.VFC<RadioProps> = ({
         <input
           name={name}
           id={name}
+          value={value}
           type='radio'
           disabled={disabled}
           checked={selected}
           onChange={(e) => {
-            onChange?.(name, e.currentTarget.checked);
+            onChange?.(name, value, e.currentTarget.checked);
           }}
           className={cn(
             'rounded-full border-secondary-light text-primary focus:shadow-sm focus:border-primary-light focus:ring-1 focus:ring-offset-1 focus:ring-primary focus:ring-opacity-50 transition-all hover:shadow-sm',
