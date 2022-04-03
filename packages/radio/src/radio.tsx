@@ -9,7 +9,7 @@ export type RadioProps = {
   error?: boolean;
   errorText?: string;
   radioText?: string;
-  onChange?: (name: string, value: string | number, checked: boolean) => void;
+  onChange?: (name: string, value: string | number, checked?: boolean) => void;
 };
 
 export const Radio: React.VFC<RadioProps> = ({
@@ -53,5 +53,3 @@ export const Radio: React.VFC<RadioProps> = ({
     </div>
   );
 };
-
-Radio.type;
