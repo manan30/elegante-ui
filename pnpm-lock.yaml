@@ -5,6 +5,7 @@ importers:
   .:
     specifiers:
       '@babel/core': ^7.17.5
+      '@headlessui/react': 1.5.0
       '@storybook/addon-actions': ^6.4.19
       '@storybook/addon-essentials': ^6.4.19
       '@storybook/addon-interactions': ^6.4.19
@@ -39,6 +40,7 @@ importers:
       typescript: 4.2.2
     devDependencies:
       '@babel/core': 7.17.5
+      '@headlessui/react': 1.5.0_react-dom@17.0.2+react@17.0.2
       '@storybook/addon-actions': 6.4.19_b8fdba992ce7d797017dc07106486496
       '@storybook/addon-essentials': 6.4.19_72f93b21f50448596f5a189586522c13
       '@storybook/addon-interactions': 6.4.19_7d9d2a3fb2e7673a96132996dcddd076
@@ -78,6 +80,15 @@ importers:
       react: 17.0.2
     devDependencies:
       '@waveui/styles': link:../styles
+      react: 17.0.2
+
+  packages/dropdown:
+    specifiers:
+      '@headlessui/react': 1.5.0
+      react: 17.0.2
+    dependencies:
+      '@headlessui/react': 1.5.0_react-dom@17.0.2+react@17.0.2
+    devDependencies:
       react: 17.0.2
 
   packages/styles:
@@ -1655,6 +1666,16 @@ packages:
   /@gar/promisify/1.1.3:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
+
+  /@headlessui/react/1.5.0_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-aaRnYxBb3MU2FNJf3Ut9RMTUqqU3as0aI1lQhgo2n9Fa67wRu14iOGqx93xB+uMNVfNwZ5B3y/Ndm7qZGuFeMQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+    dependencies:
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
 
   /@humanwhocodes/config-array/0.9.5:
     resolution: {integrity: sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw==}

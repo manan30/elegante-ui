@@ -1,46 +1,22 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Dropdown } from '../src';
+import { Dropdown as DropdownComponent } from '../src';
 
 export default {
-  title: 'Button',
-  component: Dropdown,
+  title: 'Dropdown',
+  component: DropdownComponent,
   parameters: {
     controls: { hideNoControlsWarning: true }
   },
-  argTypes: {
-    loading: { defaultValue: false, type: 'boolean' },
-    appearance: {
-      defaultValue: 'primary',
-      control: { type: 'select' }
-    },
-    variant: {
-      defaultValue: 'solid',
-      control: { type: 'select' }
-    },
-    disabled: {
-      defaultValue: false,
-      type: 'boolean'
-    },
-    onClick: { action: 'Clicked', table: { disable: true } }
-  },
-  decorators: [(Story) => <div className='w-24'>{Story()}</div>]
-} as ComponentMeta<typeof Dropdown>;
+  argTypes: {},
+  decorators: [(Story) => <div className='w-72'>{Story()}</div>]
+} as ComponentMeta<typeof DropdownComponent>;
 
-const Template: ComponentStory<typeof Dropdown> = (args) => (
-  <Dropdown {...args}>Button</Dropdown>
+const Template: ComponentStory<typeof DropdownComponent> = (args) => (
+  <DropdownComponent {...args} />
 );
 
-export const Solid = Template.bind({});
-Solid.args = {
-  variant: 'solid'
-};
-
-export const Outline = Template.bind({});
-Outline.args = {
-  variant: 'outline'
-};
-
-export const Link = Template.bind({});
-Link.args = {
-  variant: 'link'
+export const Dropdown = Template.bind({});
+Dropdown.args = {
+  label: 'Choices',
+  options: [{ text: 'Eat' }, { text: 'Sleep' }]
 };
