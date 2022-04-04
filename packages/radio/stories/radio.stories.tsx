@@ -1,36 +1,32 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Checkbox } from '../src';
+import { Radio } from '../src';
 
 export default {
-  title: 'Checkbox/Element',
-  component: Checkbox,
+  title: 'Radio/Element',
+  component: Radio,
   parameters: {
     controls: { hideNoControlsWarning: true }
   },
   args: {
-    name: 'checkbox',
-    checkboxText: 'Vaccinated',
+    name: 'radio',
+    radioText: 'Vaccinated',
     disabled: false,
     error: false,
-    errorText: 'Required'
+    errorText: 'Required',
+    value: 'vaccinated'
   },
   argTypes: {
-    name: { control: { text: 'text' } },
-    checkboxText: { control: { type: 'text' } },
-    checked: { control: { type: null } },
+    name: { control: { type: 'text' } },
+    radioText: { control: { type: 'text' } },
+    selected: { control: { type: null } },
     disabled: { control: { type: 'boolean' } },
     error: { control: { type: 'boolean' } },
     errorText: { control: { type: 'text' } },
     onChange: { control: { type: null } },
     value: { control: { type: 'text' } }
   }
-} as ComponentMeta<typeof Checkbox>;
+} as ComponentMeta<typeof Radio>;
 
-const Template: ComponentStory<typeof Checkbox> = (args) => (
-  <Checkbox {...args} />
-);
+const Template: ComponentStory<typeof Radio> = (args) => <Radio {...args} />;
 
 export const Element = Template.bind({});
-Element.args = {
-  value: 'vaccinated'
-};

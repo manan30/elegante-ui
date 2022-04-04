@@ -1,21 +1,21 @@
 import * as React from 'react';
 import cn from 'clsx';
 
-export type CheckboxProps = {
+export type RadioProps = {
   /**
-   * checkbox name
+   * radio name
    */
   name: string;
   /**
-   * checkbox value
+   * radio value
    */
   value: string | number;
   /**
-   * represents if checkbox is checked
+   * represents if radio is selected
    */
-  checked?: boolean;
+  selected?: boolean;
   /**
-   * controls disabled state for checkbox
+   * controls disabled state for radio
    */
   disabled?: boolean;
   /**
@@ -27,11 +27,11 @@ export type CheckboxProps = {
    */
   errorText?: string;
   /**
-   * text that can accompany checkbox
+   * text that can accompany radio
    */
-  checkboxText?: string;
+  radioText?: string;
   /**
-   * checkbox change handler
+   * radio change handler
    */
   onChange?: (name: string, value: string | number, checked?: boolean) => void;
   /**
@@ -44,14 +44,14 @@ export type CheckboxProps = {
   style?: React.CSSProperties;
 };
 
-export const Checkbox: React.VFC<CheckboxProps> = ({
+export const Radio: React.VFC<RadioProps> = ({
   name,
   value,
-  checked,
+  selected,
   disabled,
   error,
   errorText,
-  checkboxText,
+  radioText,
   onChange,
   ...rest
 }) => {
@@ -62,26 +62,26 @@ export const Checkbox: React.VFC<CheckboxProps> = ({
           name={name}
           id={name}
           value={value}
-          type='checkbox'
+          type='radio'
           disabled={disabled}
-          checked={checked}
+          checked={selected}
           onChange={(e) => {
             onChange?.(name, value, e.currentTarget.checked);
           }}
           className={cn(
-            'rounded border-secondary-light text-primary focus:shadow-sm focus:border-primary-light focus:ring-1 focus:ring-offset-1 focus:ring-primary focus:ring-opacity-50 transition-all hover:shadow-sm',
+            'rounded-full border-secondary-light text-primary focus:shadow-sm focus:border-primary-light focus:ring-1 focus:ring-offset-1 focus:ring-primary focus:ring-opacity-50 transition-all hover:shadow-sm',
             error && 'text-danger focus:border-danger-light focus:ring-danger',
             disabled && 'opacity-50'
           )}
         />
-        {checkboxText ? (
+        {radioText ? (
           <span
             className={cn(
               'text-xs sm:text-sm text-secondary',
               disabled && 'opacity-50'
             )}
           >
-            {checkboxText}
+            {radioText}
           </span>
         ) : null}
       </label>

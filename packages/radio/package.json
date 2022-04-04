@@ -1,0 +1,29 @@
+{
+  "name": "@waveui/checkbox",
+  "version": "0.0.1",
+  "description": "Wave UI Checkbox component",
+  "scripts": {
+    "clean": "rm -rf dist tsconfig.tsbuildinfo",
+    "prebuild": "pnpm clean",
+    "build": "pnpm exec concurrently pnpm:build:*",
+    "build:component": "pnpm exec esbuild --bundle --format=esm --minify --outdir=dist --sourcemap --target=es2016 index.ts",
+    "build:types": "pnpm exec tsc --emitDeclarationOnly --declarationDir dist/types",
+    "publish": "pnpm publish --access public",
+    "test:link": "pnpm build && pnpm link --global"
+  },
+  "keywords": [],
+  "author": "Manan Joshi <mananjoshi1995@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "react": "17.0.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.6"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/types/index.d.ts"
+}
