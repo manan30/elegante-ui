@@ -2,14 +2,46 @@ import * as React from 'react';
 import cn from 'clsx';
 
 export type RadioProps = {
+  /**
+   * radio name
+   */
   name: string;
+  /**
+   * radio value
+   */
   value: string | number;
+  /**
+   * represents if radio is selected
+   */
   selected?: boolean;
+  /**
+   * controls disabled state for radio
+   */
   disabled?: boolean;
+  /**
+   * show error
+   */
   error?: boolean;
+  /**
+   * error text to be shown
+   */
   errorText?: string;
+  /**
+   * text that can accompany radio
+   */
   radioText?: string;
+  /**
+   * radio change handler
+   */
   onChange?: (name: string, value: string | number, checked?: boolean) => void;
+  /**
+   * CSS classes, eg. tailwind
+   */
+  className?: string;
+  /**
+   * React CSS style object
+   */
+  style?: React.CSSProperties;
 };
 
 export const Radio: React.VFC<RadioProps> = ({
@@ -20,10 +52,11 @@ export const Radio: React.VFC<RadioProps> = ({
   error,
   errorText,
   radioText,
-  onChange
+  onChange,
+  ...rest
 }) => {
   return (
-    <div className='flex flex-col space-y-2'>
+    <div className='flex flex-col space-y-2' {...rest}>
       <label htmlFor={name} className='inline-flex items-center space-x-2'>
         <input
           name={name}

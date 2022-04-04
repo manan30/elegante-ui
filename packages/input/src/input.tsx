@@ -1,6 +1,6 @@
 import * as React from 'react';
 import cn from 'clsx';
-import type { InputType } from './types';
+import type { InputType } from './@types';
 
 export type InputProps = {
   /**

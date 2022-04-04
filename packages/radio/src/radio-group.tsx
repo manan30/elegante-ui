@@ -24,7 +24,8 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
   error,
   errorText,
   onChange,
-  children
+  children,
+  ...rest
 }) => {
   if (!children)
     throw new Error(
@@ -44,7 +45,7 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
   }, [defaultValue]);
 
   return (
-    <div className='flex flex-col space-y-2'>
+    <div className='flex flex-col space-y-2' {...rest}>
       <div
         className={cn(
           'flex',

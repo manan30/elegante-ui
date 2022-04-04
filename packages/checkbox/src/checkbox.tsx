@@ -2,14 +2,46 @@ import * as React from 'react';
 import cn from 'clsx';
 
 export type CheckboxProps = {
+  /**
+   * checkbox name
+   */
   name: string;
+  /**
+   * checkbox value
+   */
   value: string | number;
+  /**
+   * represents if checkbox is checked
+   */
   checked?: boolean;
+  /**
+   * controls disabled state for checkbox
+   */
   disabled?: boolean;
+  /**
+   * show error
+   */
   error?: boolean;
+  /**
+   * error text to be shown
+   */
   errorText?: string;
+  /**
+   * text that can accompany checkbox
+   */
   checkboxText?: string;
+  /**
+   * checkbox change handler
+   */
   onChange?: (name: string, value: string | number, checked?: boolean) => void;
+  /**
+   * CSS classes, eg. tailwind
+   */
+  className?: string;
+  /**
+   * React CSS style object
+   */
+  style?: React.CSSProperties;
 };
 
 export const Checkbox: React.VFC<CheckboxProps> = ({
@@ -20,10 +52,11 @@ export const Checkbox: React.VFC<CheckboxProps> = ({
   error,
   errorText,
   checkboxText,
-  onChange
+  onChange,
+  ...rest
 }) => {
   return (
-    <div className='flex flex-col space-y-2'>
+    <div className='flex flex-col space-y-2' {...rest}>
       <label htmlFor={name} className='inline-flex items-center space-x-2'>
         <input
           name={name}
