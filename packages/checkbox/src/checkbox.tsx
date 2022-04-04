@@ -3,16 +3,18 @@ import cn from 'clsx';
 
 export type CheckboxProps = {
   name: string;
-  checked: boolean;
+  value: string | number;
+  checked?: boolean;
   disabled?: boolean;
   error?: boolean;
   errorText?: string;
   checkboxText?: string;
-  onChange?: (name: string, checked: boolean) => void;
+  onChange?: (name: string, value: string | number, checked?: boolean) => void;
 };
 
 export const Checkbox: React.VFC<CheckboxProps> = ({
   name,
+  value,
   checked,
   disabled,
   error,
@@ -26,11 +28,12 @@ export const Checkbox: React.VFC<CheckboxProps> = ({
         <input
           name={name}
           id={name}
+          value={value}
           type='checkbox'
           disabled={disabled}
           checked={checked}
           onChange={(e) => {
-            onChange?.(name, e.currentTarget.checked);
+            onChange?.(name, value, e.currentTarget.checked);
           }}
           className={cn(
             'rounded border-secondary-light text-primary focus:shadow-sm focus:border-primary-light focus:ring-1 focus:ring-offset-1 focus:ring-primary focus:ring-opacity-50 transition-all hover:shadow-sm',
@@ -39,7 +42,12 @@ export const Checkbox: React.VFC<CheckboxProps> = ({
           )}
         />
         {checkboxText ? (
-          <span className='text-xs sm:text-sm text-secondary'>
+          <span
+            className={cn(
+              'text-xs sm:text-sm text-secondary',
+              disabled && 'opacity-50'
+            )}
+          >
             {checkboxText}
           </span>
         ) : null}

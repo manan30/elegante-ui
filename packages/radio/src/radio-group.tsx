@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import * as React from 'react';
 import cn from 'clsx';
 import { Radio, RadioProps } from './radio';
 import { checkValidChildren } from './utils';
@@ -37,9 +37,9 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
       'Only <Radio /> components are valid inside <RadioGroup />'
     );
 
-  const [value, setValue] = useState(defaultValue ?? null);
+  const [value, setValue] = React.useState(defaultValue ?? null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setValue(defaultValue ?? null);
   }, [defaultValue]);
 

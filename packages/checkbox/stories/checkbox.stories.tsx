@@ -1,28 +1,36 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Checkbox as CheckboxComponent } from '../src';
+import { Checkbox } from '../src';
 
 export default {
-  title: 'Checkbox',
-  component: CheckboxComponent,
+  title: 'Checkbox/Element',
+  component: Checkbox,
   parameters: {
     controls: { hideNoControlsWarning: true }
   },
+  args: {
+    name: 'vaccinated',
+    checkboxText: 'Vaccinated',
+    disabled: false,
+    error: false,
+    errorText: 'Required'
+  },
   argTypes: {
-    name: { defaultValue: 'checkbox' },
-    checkboxText: {
-      defaultValue: 'This is a checkbox',
-      control: { type: 'text' }
-    },
+    name: { control: { text: 'text' } },
+    checkboxText: { control: { type: 'text' } },
     checked: { control: { type: null } },
-    disabled: { control: { type: 'boolean' }, defaultValue: false },
-    error: { control: { type: 'boolean' }, defaultValue: false },
-    errorText: { defaultValue: 'Required', control: { type: 'text' } },
-    onChange: { control: { type: null } }
+    disabled: { control: { type: 'boolean' } },
+    error: { control: { type: 'boolean' } },
+    errorText: { control: { type: 'text' } },
+    onChange: { control: { type: null } },
+    value: { control: { type: 'text' } }
   }
-} as ComponentMeta<typeof CheckboxComponent>;
+} as ComponentMeta<typeof Checkbox>;
 
-const Template: ComponentStory<typeof CheckboxComponent> = (args) => (
-  <CheckboxComponent {...args} />
+const Template: ComponentStory<typeof Checkbox> = (args) => (
+  <Checkbox {...args} />
 );
 
-export const Checkbox = Template.bind({});
+export const Element = Template.bind({});
+Element.args = {
+  value: 'vaccinated'
+};
