@@ -2,35 +2,34 @@ import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Radio, RadioGroup as RadioGroupComponent } from '../src';
 
 export default {
-  title: 'RadioGroup',
+  title: 'Radio/Group',
   component: RadioGroupComponent,
+  subcomponents: { Radio },
   parameters: {
     controls: { hideNoControlsWarning: true }
   },
+  args: { disabled: false, error: false, errorText: 'Required' },
   argTypes: {
-    name: { defaultValue: 'radio' },
-    radioText: {
-      defaultValue: 'This is a radio',
-      control: { type: 'text' }
-    },
-    selected: { control: { type: null } },
-    disabled: { control: { type: 'boolean' }, defaultValue: false },
-    error: { control: { type: 'boolean' }, defaultValue: false },
-    errorText: { defaultValue: 'Required', control: { type: 'text' } },
-    onChange: { control: { type: null } },
-    value: { control: { type: 'text' } }
+    children: { table: { disable: true } },
+    placement: { control: { type: 'select' } },
+    defaultValue: { control: { type: 'text' } },
+    disabled: { control: { type: 'boolean' } },
+    error: { control: { type: 'boolean' } },
+    errorText: { control: { type: 'text' } },
+    onChange: { control: { type: null } }
   }
 } as ComponentMeta<typeof RadioGroupComponent>;
 
 const Template: ComponentStory<typeof RadioGroupComponent> = (args) => (
   <RadioGroupComponent {...args}>
-    <Radio name='abcd' value='abcd' radioText='B1' disabled />
-    <Radio name='abcd1' value='abcd1' radioText='B2' />
-    <Radio name='abcd2' value='abcd2' radioText='B3' />
+    <Radio name='eat' value='eat' radioText='Eat' disabled />
+    <Radio name='sleep' value='sleep' radioText='Sleep' />
+    <Radio name='repeat' value='repeat' radioText='Repeat' />
   </RadioGroupComponent>
 );
 
-export const RadioGroup = Template.bind({});
-Template.args = {
-  placement: 'vertical'
+export const Group = Template.bind({});
+Group.args = {
+  placement: 'vertical',
+  defaultValue: 'eat'
 };

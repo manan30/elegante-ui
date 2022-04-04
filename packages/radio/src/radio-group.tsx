@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import cn from 'clsx';
 import { Radio, RadioProps } from './radio';
 import { checkValidChildren } from './utils';
@@ -38,6 +38,10 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
     );
 
   const [value, setValue] = useState(defaultValue ?? null);
+
+  useEffect(() => {
+    setValue(defaultValue ?? null);
+  }, [defaultValue]);
 
   return (
     <div className='flex flex-col space-y-2'>

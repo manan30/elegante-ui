@@ -42,7 +42,14 @@ export const Radio: React.VFC<RadioProps> = ({
           )}
         />
         {radioText ? (
-          <span className='text-xs sm:text-sm text-secondary'>{radioText}</span>
+          <span
+            className={cn(
+              'text-xs sm:text-sm text-secondary',
+              disabled && 'opacity-50'
+            )}
+          >
+            {radioText}
+          </span>
         ) : null}
       </label>
       {error ? (
