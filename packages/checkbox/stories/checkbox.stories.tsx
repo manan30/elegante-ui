@@ -8,7 +8,7 @@ export default {
     controls: { hideNoControlsWarning: true }
   },
   args: {
-    name: 'vaccinated',
+    name: 'checkbox',
     checkboxText: 'Vaccinated',
     disabled: false,
     error: false,

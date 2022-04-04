@@ -1,10 +1,10 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Radio, RadioGroup } from '../src';
+import { Checkbox, CheckboxGroup } from '../src';
 
 export default {
-  title: 'Radio/Group',
-  component: RadioGroup,
-  subcomponents: { Radio },
+  title: 'Checkbox/Group',
+  component: CheckboxGroup,
+  subcomponents: { Checkbox },
   parameters: {
     controls: { hideNoControlsWarning: true }
   },
@@ -18,14 +18,14 @@ export default {
     errorText: { control: { type: 'text' } },
     onChange: { control: { type: null } }
   }
-} as ComponentMeta<typeof RadioGroup>;
+} as ComponentMeta<typeof CheckboxGroup>;
 
-const Template: ComponentStory<typeof RadioGroup> = (args) => (
-  <RadioGroup {...args}>
-    <Radio name='eat' value='eat' radioText='Eat' disabled />
-    <Radio name='sleep' value='sleep' radioText='Sleep' />
-    <Radio name='repeat' value='repeat' radioText='Repeat' />
-  </RadioGroup>
+const Template: ComponentStory<typeof CheckboxGroup> = (args) => (
+  <CheckboxGroup {...args}>
+    <Checkbox name='eat' value='eat' checkboxText='Eat' disabled />
+    <Checkbox name='sleep' value='sleep' checkboxText='Sleep' />
+    <Checkbox name='repeat' value='repeat' checkboxText='Repeat' />
+  </CheckboxGroup>
 );
 
 export const Group = Template.bind({});

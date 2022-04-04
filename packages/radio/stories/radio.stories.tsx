@@ -9,11 +9,11 @@ export default {
   },
   args: {
     name: 'radio',
-    radioText: 'Element',
+    radioText: 'Vaccinated',
     disabled: false,
     error: false,
     errorText: 'Required',
-    value: 'element'
+    value: 'vaccinated'
   },
   argTypes: {
     name: { control: { type: 'text' } },
