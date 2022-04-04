@@ -54,11 +54,26 @@ export const Dropdown: React.VFC<DropdownProps> = ({
           {label}
         </Listbox.Label>
       ) : null}
-      <Listbox.Button
-        className='relative w-full py-2 pl-3 pr-10 text-xs text-left transition-shadow border rounded-md cursor-default text-secondary border-secondary-light focus:shadow-sm focus:border-primary focus:ring-1 focus:ring-primary hover:shadow-sm focus:outline-none sm:text-sm'
-        placeholder={placeholder}
-      >
-        {value?.text || placeholder}
+      <Listbox.Button className='relative w-full py-2 pl-3 pr-10 text-xs text-left transition-shadow border rounded-md cursor-default text-secondary border-secondary-light focus:shadow-sm focus:border-primary focus:ring-1 focus:ring-primary hover:shadow-sm focus:outline-none sm:text-sm'>
+        <span className='block truncate'>{value?.text ?? placeholder}</span>
+        {/* TODO: Extract to spinner component */}
+        {isLoading ? (
+          <span className='absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
+            <svg
+              viewBox='0 0 38 38'
+              xmlns='http://www.w3.org/2000/svg'
+              className={cn('animate-spin stroke-current w-4 h-4 text-primary')}
+              aria-hidden='true'
+            >
+              <g fill='none' fillRule='evenodd'>
+                <g transform='translate(1 1)' strokeWidth='2'>
+                  <circle strokeOpacity='.5' cx='18' cy='18' r='18' />
+                  <path d='M36 18c0-9.94-8.06-18-18-18' />
+                </g>
+              </g>
+            </svg>
+          </span>
+        ) : null}
       </Listbox.Button>
       {/* <Listbox.Options>
         {options.map((person) => (
