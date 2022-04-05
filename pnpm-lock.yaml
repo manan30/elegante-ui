@@ -6,6 +6,7 @@ importers:
     specifiers:
       '@babel/core': ^7.17.5
       '@headlessui/react': 1.5.0
+      '@heroicons/react': 1.0.6
       '@storybook/addon-actions': ^6.4.19
       '@storybook/addon-essentials': ^6.4.19
       '@storybook/addon-interactions': ^6.4.19
@@ -41,6 +42,7 @@ importers:
     devDependencies:
       '@babel/core': 7.17.5
       '@headlessui/react': 1.5.0_react-dom@17.0.2+react@17.0.2
+      '@heroicons/react': 1.0.6_react@17.0.2
       '@storybook/addon-actions': 6.4.19_b8fdba992ce7d797017dc07106486496
       '@storybook/addon-essentials': 6.4.19_72f93b21f50448596f5a189586522c13
       '@storybook/addon-interactions': 6.4.19_7d9d2a3fb2e7673a96132996dcddd076
@@ -76,18 +78,37 @@ importers:
 
   packages/button:
     specifiers:
-      '@waveui/styles': workspace:0.0.1
       react: 17.0.2
     devDependencies:
-      '@waveui/styles': link:../styles
+      react: 17.0.2
+
+  packages/card:
+    specifiers:
+      react: 17.0.2
+    devDependencies:
+      react: 17.0.2
+
+  packages/checkbox:
+    specifiers:
+      react: 17.0.2
+    devDependencies:
       react: 17.0.2
 
   packages/dropdown:
     specifiers:
-      '@headlessui/react': 1.5.0
       react: 17.0.2
-    dependencies:
-      '@headlessui/react': 1.5.0_react-dom@17.0.2+react@17.0.2
+    devDependencies:
+      react: 17.0.2
+
+  packages/input:
+    specifiers:
+      react: 17.0.2
+    devDependencies:
+      react: 17.0.2
+
+  packages/radio:
+    specifiers:
+      react: 17.0.2
     devDependencies:
       react: 17.0.2
 
@@ -1676,6 +1697,15 @@ packages:
     dependencies:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
+    dev: true
+
+  /@heroicons/react/1.0.6_react@17.0.2:
+    resolution: {integrity: sha512-JJCXydOFWMDpCP4q13iEplA503MQO3xLoZiKum+955ZCtHINWnx26CUxVxxFQu/uLb4LW3ge15ZpzIkXKkJ8oQ==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      react: 17.0.2
+    dev: true
 
   /@humanwhocodes/config-array/0.9.5:
     resolution: {integrity: sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw==}

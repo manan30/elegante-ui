@@ -4,6 +4,7 @@
     "docgen",
     "esbuild",
     "headlessui",
+    "heroicons",
     "outdir",
     "pnpm",
     "prebuild",

@@ -18,5 +18,5 @@ const Template: ComponentStory<typeof DropdownComponent> = (args) => (
 export const Dropdown = Template.bind({});
 Dropdown.args = {
   label: 'Choices',
-  options: [{ text: 'Eat' }, { text: 'Sleep' }]
+  options: [{ text: 'Eat' }, { text: 'Sleep', unavailable: true }]
 };
