@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Listbox, Transition } from '@headlessui/react';
-import { CheckIcon } from '@heroicons/react/solid';
+import { CheckIcon, SelectorIcon } from '@heroicons/react/solid';
 import cn from 'clsx';
 import { uid } from './utils';
 
@@ -80,15 +80,20 @@ export const Dropdown: React.VFC<DropdownProps> = ({
             {label}
           </Listbox.Label>
         ) : null}
-        <Listbox.Button className='relative w-full py-2 pl-3 pr-10 text-xs text-left transition-shadow border rounded-md cursor-default text-primary border-secondary-light focus:shadow-sm focus:border-primary focus:ring-1 focus:ring-primary hover:shadow-sm focus:outline-none sm:text-sm'>
+        <Listbox.Button
+          className={cn(
+            'relative w-full py-2 pl-3 pr-10 text-xs text-left transition-shadow border rounded-md cursor-default text-primary border-secondary-light focus:shadow-sm focus:border-primary focus:ring-1 focus:ring-primary hover:shadow-sm focus:outline-none sm:text-sm',
+            isLoading && 'opacity-50'
+          )}
+        >
           <span
             className={cn('block truncate', !_value?.text && 'text-secondary')}
           >
             {_value?.text ?? placeholder}
           </span>
           {/* TODO: Extract to spinner component */}
-          {isLoading ? (
-            <span className='absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
+          <span className='absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
+            {isLoading ? (
               <svg
                 viewBox='0 0 38 38'
                 xmlns='http://www.w3.org/2000/svg'
@@ -104,8 +109,10 @@ export const Dropdown: React.VFC<DropdownProps> = ({
                   </g>
                 </g>
               </svg>
-            </span>
-          ) : null}
+            ) : (
+              <SelectorIcon className='w-4 h-4 text-secondary' />
+            )}
+          </span>
         </Listbox.Button>
       </div>
       <Transition
