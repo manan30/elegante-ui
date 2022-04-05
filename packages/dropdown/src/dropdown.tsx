@@ -69,14 +69,18 @@ export const Dropdown: React.VFC<DropdownProps> = ({
   );
 
   return (
-    <Listbox value={_value} onChange={_onChange} disabled={disabled}>
+    <Listbox
+      value={_value}
+      onChange={_onChange}
+      disabled={disabled || isLoading}
+    >
       <div className='relative flex flex-col space-y-2'>
         {label ? (
           <Listbox.Label className='text-xs font-semibold tracking-wide text-primary sm:text-sm'>
             {label}
           </Listbox.Label>
         ) : null}
-        <Listbox.Button className='relative w-full py-2 pl-3 pr-10 text-xs text-left transition-shadow border rounded-md cursor-default text-primary border-secondary-light focus:shadow-sm focus:border-primary focus:ring-1 focus:ring-primary hover:shadow-sm focus:outline-none sm:text-sm form-select'>
+        <Listbox.Button className='relative w-full py-2 pl-3 pr-10 text-xs text-left transition-shadow border rounded-md cursor-default text-primary border-secondary-light focus:shadow-sm focus:border-primary focus:ring-1 focus:ring-primary hover:shadow-sm focus:outline-none sm:text-sm'>
           <span
             className={cn('block truncate', !_value?.text && 'text-secondary')}
           >

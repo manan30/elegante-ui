@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Combobox as HUICombobox, Transition } from '@headlessui/react';
-import { CheckIcon, SelectorIcon } from '@heroicons/react/solid';
+import { CheckIcon } from '@heroicons/react/solid';
 import cn from 'clsx';
 import { uid } from './utils';
 
@@ -55,6 +55,7 @@ export const Combobox: React.VFC<ComboboxProps> = ({
       'Please provide an options array to the <Combobox /> component'
     );
   const [_value, _setValue] = React.useState(value);
+  const [query, setQuery] = React.useState('');
 
   React.useEffect(() => {
     _setValue(value);
@@ -68,25 +69,39 @@ export const Combobox: React.VFC<ComboboxProps> = ({
     [onChange, _setValue]
   );
 
+  const filteredOptions = React.useMemo(() => {
+    return query === ''
+      ? options
+      : options.filter((option) =>
+          option.text
+            .toLowerCase()
+            .replace(/\s+/g, '')
+            .includes(query.toLowerCase().replace(/\s+/g, ''))
+        );
+  }, [query, options]);
+
   return (
-    <HUICombobox value={_value} onChange={_onChange} disabled={disabled}>
+    <HUICombobox
+      value={_value}
+      onChange={_onChange}
+      disabled={disabled || isLoading}
+    >
       <div className='relative flex flex-col space-y-2'>
         {label ? (
           <HUICombobox.Label className='text-xs font-semibold tracking-wide text-primary sm:text-sm'>
             {label}
           </HUICombobox.Label>
         ) : null}
-        <div className='relative w-full py-2 pl-3 pr-10 text-xs text-left transition-shadow border rounded-md cursor-default text-primary border-secondary-light focus:shadow-sm focus:border-primary focus:ring-1 focus:ring-primary hover:shadow-sm focus:outline-none sm:text-sm form-select'>
+        <div className='relative w-full py-2 pl-3 pr-10 transition-shadow border rounded-md cursor-default text-primary border-secondary-light focus-within:shadow-sm focus-within:border-primary focus-within:ring-1 focus-within:ring-primary hover:shadow-sm focus-within:outline-none'>
           <HUICombobox.Input
-            className='w-full py-2 pl-3 pr-10 text-sm leading-5 border-none text-secondary focus:ring-0'
-            onChange={() => {}}
-            // displayValue={(option) => option.text}
-            // onChange={(event) => setQuery(event.target.value)}
+            className='w-full p-0 text-xs leading-5 text-left border-none text-primary focus:ring-0 sm:text-sm'
+            onChange={(e) => {
+              setQuery(e.target.value);
+            }}
+            placeholder={placeholder}
+            displayValue={(option: ComboboxOption) => option.text}
           />
-          <HUICombobox.Button
-            className='absolute inset-y-0 right-0 flex items-center pr-2'
-            disabled={isLoading}
-          >
+          <span className='absolute inset-y-0 right-0 flex items-center pr-2'>
             {isLoading ? (
               <span className='absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
                 <svg
@@ -105,10 +120,8 @@ export const Combobox: React.VFC<ComboboxProps> = ({
                   </g>
                 </svg>
               </span>
-            ) : (
-              <SelectorIcon className='w-4 h-4 text-secondary' />
-            )}
-          </HUICombobox.Button>
+            ) : null}
+          </span>
         </div>
       </div>
       <Transition
@@ -116,41 +129,47 @@ export const Combobox: React.VFC<ComboboxProps> = ({
         leave='transition ease-in duration-100'
         leaveFrom='opacity-100'
         leaveTo='opacity-0'
-        // afterLeave={() => setQuery('')}
+        afterLeave={() => setQuery('')}
       >
         <HUICombobox.Options className='w-full py-1 mt-1 overflow-auto text-xs bg-white rounded-md shadow-sm max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm'>
-          {options.map((option) => (
-            <HUICombobox.Option
-              key={option?.id ?? uid()}
-              value={option}
-              disabled={option.unavailable}
-              className='relative cursor-default select-none'
-            >
-              {({ selected, disabled, active }) => (
-                <>
-                  <span
-                    className={cn(
-                      'block truncate py-2 pl-10 pr-4',
-                      selected
-                        ? 'font-medium text-primary-dark'
-                        : 'font-normal text-secondary',
-                      disabled && 'opacity-50',
-                      active
-                        ? 'text-primary-dark bg-primary-light'
-                        : 'text-secondary'
-                    )}
-                  >
-                    {option.text}
-                  </span>
-                  {selected ? (
-                    <span className='absolute inset-y-0 left-0 flex items-center pl-2 text-primary'>
-                      <CheckIcon className='w-4 h-4' aria-hidden='true' />
+          {filteredOptions.length === 0 && query !== '' ? (
+            <div className='relative px-4 py-2 cursor-default select-none text-secondary'>
+              No results found
+            </div>
+          ) : (
+            filteredOptions.map((option) => (
+              <HUICombobox.Option
+                key={option?.id ?? uid()}
+                value={option}
+                disabled={option.unavailable}
+                className='relative cursor-default select-none'
+              >
+                {({ selected, disabled, active }) => (
+                  <>
+                    <span
+                      className={cn(
+                        'block truncate py-2 pl-10 pr-4',
+                        selected
+                          ? 'font-medium text-primary-dark'
+                          : 'font-normal text-secondary',
+                        disabled && 'opacity-50',
+                        active
+                          ? 'text-primary-dark bg-primary-light'
+                          : 'text-secondary'
+                      )}
+                    >
+                      {option.text}
                     </span>
-                  ) : null}
-                </>
-              )}
-            </HUICombobox.Option>
-          ))}
+                    {selected ? (
+                      <span className='absolute inset-y-0 left-0 flex items-center pl-2 text-primary'>
+                        <CheckIcon className='w-4 h-4' aria-hidden='true' />
+                      </span>
+                    ) : null}
+                  </>
+                )}
+              </HUICombobox.Option>
+            ))
+          )}
         </HUICombobox.Options>
       </Transition>
     </HUICombobox>
