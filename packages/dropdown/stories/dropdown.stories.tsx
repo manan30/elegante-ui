@@ -7,7 +7,19 @@ export default {
   parameters: {
     controls: { hideNoControlsWarning: true }
   },
-  argTypes: {},
+  args: {
+    disabled: false,
+    isLoading: false,
+    placeholder: 'select a value'
+  },
+  argTypes: {
+    disabled: { control: { type: 'boolean' } },
+    isLoading: { control: { type: 'boolean' } },
+    label: { control: { type: 'text' } },
+    onChange: { control: { type: 'null' } },
+    placeholder: { control: { type: 'text' } },
+    value: { control: { type: null } }
+  },
   decorators: [(Story) => <div className='w-72'>{Story()}</div>]
 } as ComponentMeta<typeof DropdownComponent>;
 

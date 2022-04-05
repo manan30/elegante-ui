@@ -45,11 +45,15 @@ export const Dropdown: React.VFC<DropdownProps> = ({
   value,
   label,
   options,
-  disabled,
-  isLoading,
+  disabled = false,
+  isLoading = false,
   placeholder = 'select a value',
   onChange
 }) => {
+  if (!options || !options.length)
+    throw new Error(
+      'Please provide an options array to the <Dropdown /> component'
+    );
   const [_value, _setValue] = React.useState(value);
 
   React.useEffect(() => {
@@ -119,7 +123,9 @@ export const Dropdown: React.VFC<DropdownProps> = ({
                   <span
                     className={cn(
                       'block truncate py-2 pl-10 pr-4',
-                      selected ? 'font-medium' : 'font-normal',
+                      selected
+                        ? 'font-medium text-primary-dark'
+                        : 'font-normal text-secondary',
                       disabled && 'opacity-50',
                       active
                         ? 'text-primary-dark bg-primary-light'
