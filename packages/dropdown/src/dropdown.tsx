@@ -38,7 +38,7 @@ export type DropdownProps = {
   /**
    *
    */
-  onChange: (value: DropdownOption) => void;
+  onChange: (value?: DropdownOption) => void;
 };
 
 export const Dropdown: React.VFC<DropdownProps> = ({
@@ -50,8 +50,22 @@ export const Dropdown: React.VFC<DropdownProps> = ({
   placeholder = 'select a value',
   onChange
 }) => {
+  const [_value, _setValue] = React.useState(value);
+
+  React.useEffect(() => {
+    _setValue(value);
+  }, [value]);
+
+  const _onChange = React.useCallback(
+    (currentValue: DropdownProps['value']) => {
+      _setValue(currentValue);
+      onChange?.(currentValue);
+    },
+    [onChange, _setValue]
+  );
+
   return (
-    <Listbox value={value} onChange={onChange} disabled={disabled}>
+    <Listbox value={_value} onChange={_onChange} disabled={disabled}>
       <div className='relative flex flex-col space-y-2'>
         {label ? (
           <Listbox.Label className='text-xs font-semibold tracking-wide text-primary sm:text-sm'>
@@ -60,9 +74,9 @@ export const Dropdown: React.VFC<DropdownProps> = ({
         ) : null}
         <Listbox.Button className='relative w-full py-2 pl-3 pr-10 text-xs text-left transition-shadow border rounded-md cursor-default text-primary border-secondary-light focus:shadow-sm focus:border-primary focus:ring-1 focus:ring-primary hover:shadow-sm focus:outline-none sm:text-sm form-select'>
           <span
-            className={cn('block truncate', !value?.text && 'text-secondary')}
+            className={cn('block truncate', !_value?.text && 'text-secondary')}
           >
-            {value?.text ?? placeholder}
+            {_value?.text ?? placeholder}
           </span>
           {/* TODO: Extract to spinner component */}
           {isLoading ? (
