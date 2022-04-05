@@ -3,19 +3,19 @@ import cn from 'clsx';
 
 export type ButtonProps = {
   /**
-   * Shows loading spinner when true
+   * shows loading spinner when true
    */
   loading?: boolean;
   /**
-   * Supported button variants
+   * supported button variants
    */
   variant?: 'solid' | 'link' | 'outline';
   /**
-   * Supported button appearance
+   * supported button appearance
    */
   appearance?: 'primary' | 'secondary';
   /**
-   * Controls button disabled state
+   * controls button disabled state
    */
   disabled?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
