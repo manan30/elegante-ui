@@ -7,7 +7,8 @@
     "lint:check": "pnpm exec turbo lint:check",
     "lint:fix": "pnpm exec turbo lint:fix",
     "format:check": "pnpm exec turbo format:check",
-    "format:fix": "pnpm exec turbo format:fix"
+    "format:fix": "pnpm exec turbo format:fix",
+    "typecheck": "pnpm exec tsc"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,18 @@
   },
   "homepage": "https://github.com/manan30/elegante-ui#readme",
   "devDependencies": {
-    "turbo": "^1.2.16"
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "^8.17.0",
+    "eslint-config-elegante-react-ts": "^1.0.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "prettier": "^2.6.2",
+    "prettier-plugin-organize-imports": "^2.3.4",
+    "turbo": "^1.2.16",
+    "typescript": "^4.7.3"
   },
   "engines": {
     "node": ">=14.0.0"

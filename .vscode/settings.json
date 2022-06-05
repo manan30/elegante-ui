@@ -13,6 +13,7 @@
     "semibold",
     "subcomponents",
     "tailwindcss",
-    "tsbuildinfo"
+    "tsbuildinfo",
+    "typecheck"
   ]
 }
