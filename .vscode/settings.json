@@ -2,6 +2,7 @@
   "cSpell.words": [
     "clsx",
     "Combobox",
+    "commitlint",
     "docgen",
     "esbuild",
     "headlessui",
@@ -14,6 +15,6 @@
     "subcomponents",
     "tailwindcss",
     "tsbuildinfo",
-    "waveui"
+    "typecheck"
   ]
 }

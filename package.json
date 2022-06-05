@@ -1,24 +1,18 @@
 {
-  "name": "waveui",
+  "name": "@elegante/react",
   "version": "0.0.0",
-  "description": "React component library built using Tailwind CSS",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "install:all": "pnpm --recursive install",
-    "build:all": "pnpm --filter '@waveui/*' build",
-    "publish:all": "pnpm --filter '@waveui/*' publish",
-    "lint:all": "pnpm exec eslint 'packages/**/*.{ts,tsx}' --max-warnings 0",
-    "lint-fix:all": "pnpm exec eslint --fix 'packages/**/*.{ts,tsx}'",
-    "format:all": "pnpm exec prettier --write 'packages/**/*.{ts,tsx,css}'",
-    "format-check:all": "pnpm exec prettier --check 'packages/**/*.{ts,tsx,css}'",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "prepare": "husky install"
+    "lint:check": "turbo run lint:check",
+    "lint:fix": "turbo run lint:fix",
+    "format:check": "turbo run format:check",
+    "format:fix": "turbo run format:fix",
+    "typecheck": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manan30/wave-ui.git"
+    "url": "git+https://github.com/manan30/elegante-ui"
   },
   "keywords": [
     "react",
@@ -29,45 +23,28 @@
   "author": "Manan Joshi <mananjoshi1995@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/manan30/wave-ui/issues"
+    "url": "https://github.com/manan30/elegante-ui/issues"
   },
-  "homepage": "https://github.com/manan30/wave-ui#readme",
+  "homepage": "https://github.com/manan30/elegante-ui#readme",
   "devDependencies": {
-    "@babel/core": "^7.17.5",
-    "@headlessui/react": "1.5.0",
-    "@heroicons/react": "1.0.6",
-    "@storybook/addon-actions": "^6.4.19",
-    "@storybook/addon-essentials": "^6.4.19",
-    "@storybook/addon-interactions": "^6.4.19",
-    "@storybook/addon-links": "^6.4.19",
-    "@storybook/addon-postcss": "2.0.0",
-    "@storybook/builder-webpack4": "6.4.19",
-    "@storybook/react": "^6.4.19",
-    "@storybook/testing-library": "^0.0.9",
-    "@tailwindcss/forms": "0.5.0",
-    "@types/react": "17.0.39",
-    "@types/react-dom": "17.0.11",
-    "@typescript-eslint/eslint-plugin": "5.12.0",
-    "@typescript-eslint/parser": "5.12.0",
-    "autoprefixer": "10.4.2",
-    "babel-loader": "^8.2.3",
-    "clsx": "1.1.1",
-    "concurrently": "7.0.0",
-    "esbuild": "0.14.25",
-    "eslint": "8.9.0",
-    "eslint-config-prettier": "8.4.0",
-    "eslint-plugin-import": "2.25.4",
-    "eslint-plugin-jsx-a11y": "6.5.1",
-    "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-react": "7.28.0",
-    "eslint-plugin-react-hooks": "4.3.0",
-    "husky": "^7.0.0",
-    "postcss": "8.4.7",
-    "prettier": "2.5.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "tailwindcss": "3.0.23",
-    "typescript": "4.2.2"
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "^8.17.0",
+    "eslint-config-elegante-react-ts": "^1.0.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.6.2",
+    "prettier-plugin-organize-imports": "^2.3.4",
+    "turbo": "^1.2.16",
+    "typescript": "^4.7.3"
   },
-  "resolutions": {}
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "packageManager": "pnpm@7.1.0"
 }
