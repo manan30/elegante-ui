@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "lint:check": "pnpm exec turbo lint:check",
-    "lint:fix": "pnpm exec turbo lint:fix",
-    "format:check": "pnpm exec turbo format:check",
-    "format:fix": "pnpm exec turbo format:fix",
-    "typecheck": "pnpm exec tsc"
+    "lint:check": "turbo run lint:check",
+    "lint:fix": "turbo run lint:fix",
+    "format:check": "turbo run format:check",
+    "format:fix": "turbo run format:fix",
+    "typecheck": "tsc"
   },
   "repository": {
     "type": "git",
