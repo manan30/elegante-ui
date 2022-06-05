@@ -13,7 +13,6 @@
     "semibold",
     "subcomponents",
     "tailwindcss",
-    "tsbuildinfo",
-    "waveui"
+    "tsbuildinfo"
   ]
 }

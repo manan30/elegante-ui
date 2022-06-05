@@ -1,1 +1,1 @@
-# Wave UI
+# @elegante/react
